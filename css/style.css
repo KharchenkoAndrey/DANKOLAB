@@ -1,0 +1,151 @@
+body {
+	margin: 0;
+}
+
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+.table {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.table__text {
+	margin: 0;
+}
+
+.table__text--small {
+	font-size: 12px;
+}
+
+.table__link {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.table__row {
+	display: flex;
+	gap: 95px;
+}
+
+.table__item {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	height: 113px;
+	/*min-height: 113px;
+	padding: 5px;*/
+	text-align: center;
+}
+
+.table__item:not(:last-child):not(.table__item--heading)::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: -95px;
+	width: 95px;
+	height: 1px;
+	background-color: #a5b7dd;
+}
+
+.table__item:nth-child(2)::after {
+	background-color: #7eab55;
+}
+
+.table__item:nth-child(3)::after {
+	background-color: #b3cce7;
+}
+
+.table__item:first-child,
+.table__item:last-child {
+	width: 230px;
+}
+
+.table__item:first-child {
+	font-size: 24px;
+	background-color: #a5a5a5;
+}
+
+.table__item:not(.table__item--heading):not(.table__item--num-end):first-child::before {
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	left: 50%;
+	width: 9px;
+	height: 16px;
+	background-image: url(../img/arrow.png);
+}
+
+.table__item--num:first-child {
+	font-size: 36px;
+}
+
+.table__item:last-child {
+	background-color: #6a99d0;
+}
+
+.table__item:nth-child(2) {
+	width: 405px;
+	background-color: #4f71be;
+}
+
+.table__item:nth-child(3) {
+	width: 440px;
+	background-color: #7eab55;
+}
+
+@media (max-width: 768px) {
+	.table {
+		flex-wrap: nowrap;
+		flex-direction: column;
+		gap: 0;
+		font-size: 16px;
+	}
+
+	.table__row {
+		flex-direction: column;
+		gap: 0;
+		margin-bottom: 20px;
+	}
+
+	.table__item {
+		width: 320px;
+		height: auto;
+		min-height: 50px;
+		margin-bottom: 5px;
+	}
+
+	.table__text--small {
+		font-size: inherit;
+	}
+
+	.table__item::after,
+	.table__item::before {
+		display: none;
+	}
+
+	.table__item:first-child,
+	.table__item:last-child {
+		width: 100%;
+	}
+
+	.table__item:nth-child(2) {
+		width: 100%;
+	}
+
+	.table__item:nth-child(3) {
+		width: 100%;
+	}
+}

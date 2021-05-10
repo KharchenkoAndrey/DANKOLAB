@@ -17,16 +17,18 @@ body {
 	flex-wrap: wrap;
 	gap: 20px;
 	color: #ffffff;
-	font-size: 16px;
+	/*Размер шрифта можно изменить на 16 px.*/
+	font-size: 20px;
 }
 
 .table__text {
 	margin: 0;
 }
 
-/*.table__text--small {
+/*Код ниже устанавливает размер текста для ячеек с его большим количеством. Эту часть кода нужно закоментировать.*/
+.table__text--small {
 	font-size: 12px;
-}*/
+}
 
 .table__link {
 	text-decoration: none;
@@ -44,9 +46,10 @@ body {
 	justify-content: center;
 	align-items: center;
 	border-radius: 10px;
-	/*height: 113px;*/
+	height: 113px;
+	/*Часть закоментированного кода отвечает за то что бы установить минимальную высоту ячейки за добаление 'воздуха' Эту часть кода нужно разкоментировать..
 	min-height: 113px;
-	padding: 5px;
+	padding: 5px;*/
 	text-align: center;
 }
 
@@ -60,11 +63,12 @@ body {
 	background-color: #a5b7dd;
 }
 
-.table__item:nth-child(2)::after {
+.table__item:not(:last-child):not(.table__item--heading):nth-child(2)::after {
 	background-color: #7eab55;
 }
 
-.table__item:nth-child(3)::after {
+
+.table__item:not(:last-child):not(.table__item--heading):nth-child(3)::after {
 	background-color: #b3cce7;
 }
 
